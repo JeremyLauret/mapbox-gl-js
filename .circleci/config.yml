@@ -6,6 +6,21 @@ jobs:
     steps:
       - checkout
       - run: yarn
+
+  lint:
+    docker:
+      - image: circleci/node:10.16-browsers
+    steps:
       - run: yarn run lint
+
+  test-expressions:
+    docker:
+      - image: circleci/node:10.16-browsers
+    steps:
       - run: yarn run test-expressions
+
+  test-unit:
+    docker:
+      - image: circleci/node:10.16-browsers
+    steps:
       - run: yarn run test-unit
